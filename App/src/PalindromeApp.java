@@ -1,47 +1,45 @@
 /**
  * =========================================================
- * MAIN CLASS - UseCase2PalindromeCheckerApp
+ * MAIN CLASS - UseCase3PalindromeCheckerApp
  * =========================================================
  *
- * Use Case 2: Hardcoded Palindrome Validation
+ * Use Case 3: Reverse String Based Palindrome Check
  *
  * Description:
- * This class demonstrates basic palindrome validation
- * using a hardcoded string value.
+ * This class checks whether a string is a palindrome
+ * by reversing the string and comparing it with
+ * the original value.
  *
  * @author Developer
- * @version 2.0
+ * @version 3.0
  */
 
-public class UseCase2PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     /**
-     * Application entry point for UC2.
+     * Application entry point for UC3.
      *
      * @param args Command-line arguments
      */
     public static void main(String[] args) {
 
-        // Hardcoded input string
-        String input = "madam";
+        // Hardcoded input
+        String input = "level";
 
-        boolean isPalindrome = true;
+        String reversed = "";
 
-        for (int i = 0; i < input.length() / 2; i++) {
-
-            // Compare characters from start and end
-            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        // Iterate from the last character to the first
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i);
         }
 
-        System.out.println("Input String: " + input);
+        System.out.println("Original String: " + input);
+        System.out.println("Reversed String: " + reversed);
 
-        if (isPalindrome) {
-            System.out.println("Result: The string is a Palindrome ✅");
+        if (input.equals(reversed)) {
+            System.out.println("Result: The string is a Palindrome ");
         } else {
-            System.out.println("Result: The string is NOT a Palindrome ❌");
+            System.out.println("Result: The string is NOT a Palindrome ");
         }
     }
 }
